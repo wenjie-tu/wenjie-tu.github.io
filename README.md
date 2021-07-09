@@ -2,5 +2,5 @@
 
 Welcome to [Wenjie's personal page](https://wenjie-tu.github.io/ ) 🥳🥳🥳
 
-![image](./images/house.jpg)
+[![image](./images/house.jpg)](https://wenjie-tu.github.io/)
 
