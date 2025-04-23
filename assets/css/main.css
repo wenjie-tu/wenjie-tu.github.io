@@ -3314,3 +3314,34 @@ input, select, textarea {
 			}
 
 	}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 1em;
+}
+
+.responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px; /* prevents cramping on small screens */
+}
+
+.responsive-table th,
+.responsive-table td {
+  padding: 0.75em 1em;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+.responsive-table th {
+  background-color: #eee;
+}
+
+@media screen and (max-width: 768px) {
+  .responsive-table th,
+  .responsive-table td {
+    font-size: 14px;
+    padding: 0.5em;
+  }
+}
