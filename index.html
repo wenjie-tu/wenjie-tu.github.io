@@ -53,9 +53,26 @@
 
 						<!-- One -->
 							<section id="profile">
+								<!--
 								<div class="image main" data-position="center">
 									<img src="images/snowground.jpg" alt="" />
 								</div>
+								-->
+<div class="image main hero-slideshow" data-position="center">
+  <div class="hero-slide is-active">
+    <img src="images/snowground.jpg" alt="Snow ground" />
+  </div>
+  <div class="hero-slide">
+    <img src="images/summerdrinks.jpg" alt="Summer drinks" />
+  </div>
+  <div class="hero-slide">
+    <img src="images/flowerfield.jpg" alt="" />
+  </div>
+  <div class="hero-slide">
+    <img src="images/st_moritz.jpg" alt="" />
+  </div>
+</div>
+
 								<div class="container">
 									<header class="major">
 										<h2>Wenjie Tu 涂文杰</h2>
@@ -115,6 +132,7 @@
 												</ul>
 											</div>
 										</article>
+
 										<article>
 											<a href="https://www.uzh.ch/en.html" class="image"><img src="images/UZH_1.jpg" alt="" /></a>
 											<div class="inner">
@@ -477,6 +495,41 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+<script>
+(function () {
+  const container = document.querySelector('.hero-slideshow');
+  if (!container) return;
+
+  const slides = container.querySelectorAll('.hero-slide');
+  if (!slides.length) return;
+
+  let i = 0;
+  const intervalMs = 4000; // 4s per slide
+
+  // Ensure only one is active at start
+  slides.forEach((s, idx) => s.classList.toggle('is-active', idx === 0));
+
+  let timer = setInterval(next, intervalMs);
+
+  function next() {
+    slides[i].classList.remove('is-active');
+    i = (i + 1) % slides.length;
+    slides[i].classList.add('is-active');
+  }
+
+  // Optional: pause on hover (desktop)
+  container.addEventListener('mouseenter', () => clearInterval(timer));
+  container.addEventListener('mouseleave', () => { timer = setInterval(next, intervalMs); });
+})();
+</script>
+
+
+
+
+
+
+
 
 	</body>
 </html>

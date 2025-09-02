@@ -3345,3 +3345,46 @@ input, select, textarea {
     padding: 0.5em;
   }
 }
+
+
+
+
+
+/* Smaller hero + slideshow */
+.image.main.hero-slideshow {
+  position: relative;
+  max-height: 380px;          /* adjust this to taste (e.g., 320–480px) */
+  overflow: hidden;
+}
+
+@media (min-width: 980px) {
+  .image.main.hero-slideshow { max-height: 440px; }
+}
+
+.hero-slideshow .hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 800ms ease;
+}
+
+.hero-slideshow .hero-slide.is-active {
+  opacity: 1;
+}
+
+.hero-slideshow img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;          /* keeps a clean banner look without distortion */
+}
+
+/* Optional: pause animation on hover for desktop users */
+.hero-slideshow:hover .hero-slide {
+  transition-duration: 350ms; /* snappier when pausing/resuming */
+}
+
+
+
+
+
+
